@@ -2460,7 +2460,8 @@ end;
 function TORTTensorTypeAndShapeInfoHelper.GetShape: TArray<int64_t>;
 begin
   setLength(result,GetDimensionsCount());
-  GetDimensions(@result[0], length(result));
+  if GetDimensionsCount()>0 then
+    GetDimensions(@result[0], length(result));
 end;
 
 { TSessionHelper }
